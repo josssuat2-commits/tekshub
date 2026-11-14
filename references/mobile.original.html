@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#eef0ff", "on-tertiary": "#ffffff", "error": "#ba1a1a", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#653e00", "primary-fixed": "#e2dfff", "outline-variant": "#c7c4d8", "primary-fixed-dim": "#c3c0ff", "on-secondary-fixed-variant": "#005236", "secondary-container": "#6cf8bb", "surface-variant": "#dae2fd", "on-background": "#131b2e", "tertiary-container": "#885500", "surface-container": "#eaedff", "on-primary": "#ffffff", "secondary-fixed": "#6ffbbe", "primary": "#3525cd", "on-surface": "#131b2e", "background": "#faf8ff", "surface-container-lowest": "#ffffff", "outline": "#777587", "on-tertiary-container": "#ffd4a4", "on-primary-container": "#dad7ff", "on-secondary-container": "#00714d", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "surface-tint": "#4d44e3", "surface-bright": "#faf8ff", "surface-dim": "#d2d9f4", "on-primary-fixed": "#0f0069", "surface-container-low": "#f2f3ff", "on-secondary": "#ffffff", "surface-container-high": "#e2e7ff", "on-primary-fixed-variant": "#3323cc", "inverse-primary": "#c3c0ff", "secondary": "#006c49", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed": "#002113", "primary-container": "#4f46e5", "on-surface-variant": "#464555", "secondary-fixed-dim": "#4edea3", "on-error": "#ffffff", "inverse-surface": "#283044", "on-tertiary-fixed": "#2a1700", "tertiary-fixed": "#ffddb8", "tertiary": "#684000", "surface": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-2xl": "3rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-sm": ["Inter"], "code": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "display": ["Inter"], "headline-lg-mobile": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "code": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-full"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-8 h-8 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shrink-0 shadow-[0_2px_4px_rgba(79,70,229,0.25)]"><span class="material-symbols-outlined text-[20px]">hub</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none truncate">TaskHub</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Dashboard</span></div><span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label-sm text-label-sm tracking-wide shrink-0 ml-space-xs">PBL Project</span></div><div class="flex items-center gap-space-xs shrink-0"><a aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 relative" data-path="notifications" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></a><a class="w-11 h-11 flex items-center justify-center shrink-0" data-path="team-profile" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></a></div></div></header><main class="flex-1 flex flex-col relative w-full px-margin-mobile pt-16 pb-24 bg-surface"><div class="flex flex-col w-full pb-6 space-y-space-lg">
+<!-- Team Greeting & Presence Header -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        Friday, Oct 24, 2025 • Sprint 4
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-code text-code">
+<span class="material-symbols-outlined text-[14px] text-primary">groups</span>
+        PBL-G04
+      </span>
+</div>
+<div class="flex items-baseline justify-between">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Good morning, Joshua 👋</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Here is your 3-member team status for today.</p>
+</div>
+</div>
+<!-- Active Team Presence Strip -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="relative w-8 h-8 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center shadow-sm">
+            JT
+            <span class="absolute bottom-0 right-0 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface"></span>
+</div>
+<div class="relative w-8 h-8 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center shadow-sm">
+            SL
+            <span class="absolute bottom-0 right-0 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface"></span>
+</div>
+<div class="relative w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm flex items-center justify-center shadow-sm">
+            KP
+            <span class="absolute bottom-0 right-0 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface"></span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface">3/3 Active now</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Joshua (PM), Sarah (UX), Kevin (Dev)</span>
+</div>
+</div>
+<button aria-label="Team info" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="openModal('quickActionModal')" type="button">
+<span class="material-symbols-outlined text-[18px]">info</span>
+</button>
+</div>
+<!-- Quick Actions Pills Carousel -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-1 no-scrollbar">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shrink-0 shadow-sm active:scale-95 transition-all" onclick="openModal('taskModal')">
+<span class="material-symbols-outlined text-[16px]">add_task</span>
+<span>+ New Task</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm shrink-0 active:scale-95 transition-all" onclick="openModal('noteModal')">
+<span class="material-symbols-outlined text-[16px] text-tertiary">edit_note</span>
+<span>+ Add Note</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm shrink-0 active:scale-95 transition-all" onclick="openModal('linkModal')">
+<span class="material-symbols-outlined text-[16px] text-secondary">add_link</span>
+<span>+ Quick Link</span>
+</button>
+</div>
+</div>
+<!-- KPI Metrics 2x2 Grid -->
+<section class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Sprint Metrics</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">50% Pace</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Metric 1: Total Tasks -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Tasks</span>
+<div class="w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">18</span>
+<span class="font-label-sm text-label-sm text-secondary">+2 sprint</span>
+</div>
+<span class="mt-1 font-body-sm text-body-sm text-on-surface-variant">All backlog items</span>
+</div>
+<!-- Metric 2: In Progress -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">In Progress</span>
+<div class="w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">5</span>
+<span class="font-label-sm text-label-sm text-error">3 due &lt;48h</span>
+</div>
+<span class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Dev &amp; Design active</span>
+</div>
+<!-- Metric 3: To Do -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">To Do</span>
+<div class="w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Queue</span>
+</div>
+<span class="mt-1 font-body-sm text-body-sm text-on-surface-variant">Pending peer review</span>
+</div>
+<!-- Metric 4: Completed -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Completed</span>
+<div class="w-6 h-6 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary">9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 18 items</span>
+</div>
+<!-- Progress bar -->
+<div class="mt-2 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deliverables & Active Tasks -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Deliverables &amp; Tasks</h2>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">3</span>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold" href="#">View All</a>
+</div>
+<!-- Filter chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pb-0.5">
+<button class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shrink-0">All (18)</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm shrink-0">Assigned to Me (7)</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm shrink-0">High Priority (4)</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm shrink-0">Sprint 4 Milestones</button>
+</div>
+<div class="space-y-space-sm">
+<!-- Task 1: Design Dashboard (Completed) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+              Completed
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Design
+            </span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center" title="Sarah Lin">
+              SL
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sarah</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface line-through opacity-75">Membuat Desain Dashboard &amp; Design Tokens</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High-fidelity layout, micro-interactions, and Tailwind design tokens mapping.</p>
+</div>
+<!-- Task Link preview & metadata -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-primary hover:bg-surface-container transition-colors font-code text-code" href="https://figma.com/file/taskhub-v2" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[15px]">design_services</span>
+<span>figma.com/file/taskhub-v2</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span> 6/6
+            </span>
+</div>
+</div>
+</div>
+<!-- Task 2: REST API Setup (In Progress - Critical) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+              In Progress
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+              Critical
+            </span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm flex items-center justify-center" title="Kevin Pratama">
+              KP
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kevin</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Setup REST API &amp; External URL Validator</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Backend service for real-time metadata fetching, ping check, and group repo synchronization.</p>
+</div>
+<!-- Task Link preview & metadata -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-primary hover:bg-surface-container transition-colors font-code text-code" href="https://github.com/pbl-g04/taskhub-api" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[15px]">code</span>
+<span>github.com/pbl-g04/api</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-error font-semibold">
+<span class="material-symbols-outlined text-[16px]">alarm</span> Due Today
+            </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">checklist</span> 3/5
+            </span>
+</div>
+</div>
+</div>
+<!-- Task 3: PBL Final Report (In Progress - Medium) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm transition-transform active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+              In Progress
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+              Medium
+            </span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center" title="Joshua Timothy">
+              JT
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">You</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dokumentasi &amp; Laporan Akhir PBL</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Menyusun Bab 3 (Implementasi) dan Bab 4 (Pengujian sistem TaskHub) sesuai format template resmi.</p>
+</div>
+<!-- Task Link preview & metadata -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low text-primary hover:bg-surface-container transition-colors font-code text-code" href="https://docs.google.com/document/d/taskhub-pbl" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[15px]">description</span>
+<span>docs.google.com/laporan</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> Oct 28
+            </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">checklist</span> 2/8
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Links Hub Section -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quick Links Hub</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(4 active)</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold" onclick="openModal('linkModal')">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Link</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-space-xs">
+<!-- Link 1: Drive -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">folder_shared</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Google Drive Pengumpulan</span>
+<span class="font-code text-code text-on-surface-variant truncate">drive.google.com/drive/folders/pbl04</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center active:scale-95 transition-all" onclick="copyToClipboard('https://drive.google.com/drive/folders/pbl04')" title="Copy URL">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<a class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-all" href="https://drive.google.com" rel="noopener noreferrer" target="_blank" title="Open in new tab">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Link 2: Docs -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">article</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Google Docs Laporan</span>
+<span class="font-code text-code text-on-surface-variant truncate">docs.google.com/document/d/pbl-final</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center active:scale-95 transition-all" onclick="copyToClipboard('https://docs.google.com/document/d/pbl-final')" title="Copy URL">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<a class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-all" href="https://docs.google.com" rel="noopener noreferrer" target="_blank" title="Open in new tab">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Link 3: GitHub -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]">terminal</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">GitHub Repository</span>
+<span class="font-code text-code text-on-surface-variant truncate">github.com/pbl-g04/taskhub-monorepo</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center active:scale-95 transition-all" onclick="copyToClipboard('https://github.com/pbl-g04/taskhub-monorepo')" title="Copy URL">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<a class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-all" href="https://github.com" rel="noopener noreferrer" target="_blank" title="Open in new tab">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Link 4: Figma -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">polyline</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Figma Design Workspace</span>
+<span class="font-code text-code text-on-surface-variant truncate">figma.com/@pbl-g04/taskhub-system</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center active:scale-95 transition-all" onclick="copyToClipboard('https://figma.com/@pbl-g04/taskhub-system')" title="Copy URL">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<a class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-all" href="https://figma.com" rel="noopener noreferrer" target="_blank" title="Open in new tab">
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Notes & Instructions (Dedicated Section) -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Team Notes &amp; Briefs</h2>
+<span class="material-symbols-outlined text-[18px] text-tertiary">push_pin</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold" onclick="openModal('noteModal')">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create Note</span>
+</button>
+</div>
+<!-- Notes Search -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[20px] text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline pl-10 pr-4 py-2 rounded-xl text-body-md font-body-md outline-none shadow-sm focus:bg-surface-container-low transition-colors" placeholder="Search instructions, meeting summaries..." type="text"/>
+</div>
+<div class="space-y-space-sm">
+<!-- Pinned Note: Pengumpulan Tugas PBL -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">push_pin</span> Pinned
+          </span>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Updated 2h ago</span>
+<button class="text-on-surface-variant hover:text-on-surface" title="Note options">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pengumpulan Tugas PBL - Sprint 4</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Harap semua file tugas, slide presentasi, dan demo video ditaruh dalam folder Google Drive resmi sebelum hari Jumat pukul 23:59 WIB. Pastikan hak akses view terbuka bagi dosen penguji.
+          </p>
+</div>
+<!-- Embedded Link Card inside Note -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">folder</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Official PBL-04 Submission Drive</span>
+<span class="font-code text-code text-on-surface-variant truncate">drive.google.com/.../pbl-submit</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" onclick="copyToClipboard('https://drive.google.com/drive/folders/pbl-submit')" title="Copy link">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+<a class="p-1 rounded text-primary hover:text-primary-container" href="https://drive.google.com" rel="noopener noreferrer" target="_blank" title="Open drive">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center">JT</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Joshua Timothy (Author)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Team-wide read</span>
+</div>
+</div>
+<!-- Note 2: Meeting Kelompok -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+            Meeting Sync
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Yesterday</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Weekly Evaluation &amp; Demo Polish</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Jadwal: Friday 19:00 WIB via Google Meet. Agenda: review mockup akhir Sarah, test API endpoint Kevin, dan gladi bersih demo prototype.
+          </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">video_camera_front</span>
+<span class="font-code text-code text-on-surface truncate">meet.google.com/qxr-bkmv-ywa</span>
+</div>
+<a class="px-2.5 py-1 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm shrink-0" href="https://meet.google.com" rel="noopener noreferrer" target="_blank">
+            Join Meet
+          </a>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<div class="w-5 h-5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center">SL</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sarah Lin</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Milestones & Recent Activity -->
+<section class="space-y-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Timeline &amp; Activity Feed</h2>
+<!-- Upcoming Milestones Horizontal Mini Bar -->
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sprint Milestones</span>
+<span class="font-body-sm text-body-sm text-primary">3 Remaining</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest px-3 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Dashboard Review</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Tomorrow (Oct 25)</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest px-3 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">API Integration Complete</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 26</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-lowest px-3 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Final PBL Submission</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-semibold">Oct 28 • 23:59 WIB</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Live Audit Trail</span>
+<div class="space-y-3">
+<div class="flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">KP</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold">Kevin Pratama</strong> updated backend PR link for API validator.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">24m ago</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">SL</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold">Sarah Lin</strong> pinned note <span class="italic font-normal">"Pengumpulan Tugas PBL"</span>.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2h ago</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">JT</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface"><strong class="font-semibold">Joshua Timothy</strong> created Figma Design workspace link.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5h ago</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Modals (Pure Mobile Responsive Flyouts) -->
+<!-- New Task Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="taskModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-xl p-space-md space-y-space-md animate-in fade-in slide-in-from-bottom-4 duration-200">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Create New Task</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeModal('taskModal')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Task Title</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md outline-none focus:bg-surface-container transition-colors" placeholder="e.g., Wireframe Flow Pembayaran" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Assignee (1 of 3)</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none">
+<option>Joshua Timothy (PM)</option>
+<option>Sarah Lin (UI/UX)</option>
+<option>Kevin Pratama (Dev)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Priority</label>
+<select class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none">
+<option>Medium</option>
+<option>Critical</option>
+<option>Low</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">External Deliverable Link (Optional)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-on-surface-variant">link</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-code text-code outline-none" placeholder="https://figma.com/... or https://github.com/..." type="url"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Due Date</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none" type="date" value="2025-10-26"/>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md" onclick="closeModal('taskModal')">Cancel</button>
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-sm" onclick="closeModal('taskModal'); showToast('Task successfully added!')">Save Task</button>
+</div>
+</div>
+</div>
+<!-- Add Note Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="noteModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-xl p-space-md space-y-space-md animate-in fade-in slide-in-from-bottom-4 duration-200">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Add Team Note</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeModal('noteModal')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Note Title</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md outline-none" placeholder="e.g., Pembagian Bab 4 Laporan" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Note Description / Checklist</label>
+<textarea class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md outline-none" placeholder="Tulis instruksi atau poin pembahasan tim..." rows="3"></textarea>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Reference URL (Google Drive / Docs)</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-code text-code outline-none" placeholder="https://docs.google.com/..." type="url"/>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<input class="rounded w-4 h-4 text-primary focus:ring-0" id="pinCheck" type="checkbox"/>
+<label class="font-label-md text-label-md text-on-surface" for="pinCheck">Pin this note to the top of dashboard</label>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md" onclick="closeModal('noteModal')">Cancel</button>
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-sm" onclick="closeModal('noteModal'); showToast('Note pinned to board!')">Post Note</button>
+</div>
+</div>
+</div>
+<!-- Add Link Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-end justify-center bg-inverse-surface/40 backdrop-blur-sm p-margin-mobile" id="linkModal">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-2xl shadow-xl p-space-md space-y-space-md animate-in fade-in slide-in-from-bottom-4 duration-200">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface">Add Quick Link</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeModal('linkModal')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Link Title</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md outline-none" placeholder="e.g., Trello Board / Miro Canvas" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Destination URL</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-code text-code outline-none" placeholder="https://..." type="url"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Category</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-1.5 px-2 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold" type="button">Folder</button>
+<button class="py-1.5 px-2 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm" type="button">Document</button>
+<button class="py-1.5 px-2 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm" type="button">Code / Design</button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md" onclick="closeModal('linkModal')">Cancel</button>
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-sm" onclick="closeModal('linkModal'); showToast('Link saved to hub!')">Save Link</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Feedback Container -->
+<div class="hidden fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md shadow-lg flex items-center gap-2 transition-all" id="toast">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span id="toastMsg">Action completed</span>
+</div>
+</div>
+<script>
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Link copied to clipboard!');
+      }).catch(() => {
+        showToast('Copied: ' + text);
+      });
+    } else {
+      showToast('Copied: ' + text);
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    if (toast && toastMsg) {
+      toastMsg.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2500);
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary-container font-headline-sm"><div class="h-16 px-space-sm flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 transition-colors duration-150 text-primary-container font-headline-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="tasks" href="#"><span class="material-symbols-outlined text-[24px]">check_circle</span><span class="font-label-sm text-label-sm mt-0.5">Tasks</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="notes" href="#"><span class="material-symbols-outlined text-[24px]">description</span><span class="font-label-sm text-label-sm mt-0.5">Notes</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors duration-150" data-path="links" href="#"><span class="material-symbols-outlined text-[24px]">link</span><span class="font-label-sm text-label-sm mt-0.5">Links</span></a></div></nav></body></html>

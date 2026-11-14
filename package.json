@@ -1,0 +1,24 @@
+{
+  "name": "taskhub-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TaskHub Vanilla JavaScript dengan API Vercel dan database Turso.",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "start": "node server.cjs",
+    "preview": "node scripts/preview.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "build": "node scripts/check-repo.cjs && node scripts/prepare-entries.cjs && node scripts/build-public.cjs",
+    "db:init": "node scripts/db-init.cjs",
+    "db:check": "node scripts/db-check.cjs",
+    "auth:setup": "node scripts/setup-auth.cjs",
+    "check:repo": "node scripts/check-repo.cjs",
+    "package:source": "node scripts/check-repo.cjs && node scripts/package-source.cjs",
+    "secret": "node -e \"console.log(require('node:crypto').randomBytes(32).toString('hex'))\"",
+    "prepare-entries": "node scripts/prepare-entries.cjs"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "@tursodatabase/serverless": "^1.4.1"
+  }
+}
